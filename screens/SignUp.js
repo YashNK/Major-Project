@@ -15,11 +15,12 @@ const SignUp = ({navigation}) => {
   return (
     <SafeAreaView className=" bg-white flex-1 relative justify-center">
 
-      <View className="bottom-1 right-1 absolute">
-        <Image className="w-[450px] h-[550px]" source={require('../assets/SignUpVectorArt.jpg')}/>
+      <View className="flex-row justify-center items-center absolute">
+        <Image className="w-[450px] h-[950px]" source={{uri: "https://i.pinimg.com/originals/4a/ae/b0/4aaeb0008ad267b0a30ae4fe64ca6800.jpg"}}/>
+        {/* <Image className=" object-contain w-full h-[900px]" source={require('../assets/SignUp2.png')}/> */}
       </View>
 
-      <View className=" bg-black/30 rounded-3xl mx-11 p-5 pb-9">
+      <View className=" bg-black/60 rounded-3xl mx-11 p-5 pb-9">
 
         <View className=" flex-row justify-center ">
           <Image className="w-[100px] h-[100px]" source={require('../assets/AppLogo.png')}/>

@@ -38,7 +38,7 @@ const HomeScreen = () => {
     
       <View className="mb-11">
 
-        <View className="h-[120px] justify-center bg-violet-600 rounded-xl p-3 relative space-y-[-7px]">
+        <View className="h-[130px] justify-center bg-violet-600 rounded-xl p-3 relative space-y-[-7px]">
 
           <Image source={require('../assets/HomeIMG.png')} className="w-[190px] h-[190px] absolute right-1 mb-2"/>
           <Text className="text-white font-extrabold relative italic text-[15px]">Use Our</Text>

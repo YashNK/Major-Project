@@ -17,11 +17,12 @@ const Login = ({navigation}) => {
   return (
     <SafeAreaView className=" bg-white flex-1 relative justify-center">
 
-      <View className="bottom-1 right-1 absolute">
-        <Image className="w-[550px] h-[550px]" source={require('../assets/LogInVectorArt.jpg')}/>
+      <View className="flex-row justify-center items-center absolute">
+        <Image className="w-[450px] h-[950px]" source={{uri: "https://4kwallpapers.com/images/wallpapers/lofi-girl-surreal-2880x1800-14881.jpg"}}/>
+        {/* <Image className=" object-contain w-full h-[900px]" source={require('../assets/SignUp2.png')}/> */}
       </View>
 
-      <View className=" bg-black/30 rounded-3xl mx-11 p-11">
+      <View className=" bg-black/60 rounded-3xl mx-11 p-11">
 
         <View className=" flex-row justify-center ">
           <Image className="w-[180px] h-[180px]" source={require('../assets/AppLogo.png')}/>
