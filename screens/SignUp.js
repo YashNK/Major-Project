@@ -16,7 +16,7 @@ const SignUp = ({navigation}) => {
     <SafeAreaView className=" bg-white flex-1 relative justify-center">
 
       <View className="flex-row justify-center items-center absolute">
-        <Image className="w-[450px] h-[950px]" source={{uri: "https://i.pinimg.com/originals/4a/ae/b0/4aaeb0008ad267b0a30ae4fe64ca6800.jpg"}}/>
+        <Image className="w-[450px] h-[950px]" source={{uri: "https://img.freepik.com/premium-photo/beautiful-cute-anime-girl-floating-space-listening-music-her-headphones-manga-style-relaxing-generative-ai-lofi-hip-hop-music-study-girl-chilling-generative-ai_117038-5565.jpg"}}/>
         {/* <Image className=" object-contain w-full h-[900px]" source={require('../assets/SignUp2.png')}/> */}
       </View>
 

@@ -92,7 +92,7 @@ const DelayedAuditoryFeedBack = () => {
       </View>
 
       <View className="h-[200px]">
-        <TextInput placeholder='Type Your Speach Here' className="text-center px-7 mb-20 rounded-xl w-full bg-indigo-300 h-full" multiline></TextInput>
+        <TextInput placeholder='Type Your Speech Here' className="text-center px-7 mb-20 rounded-xl w-full bg-indigo-300 h-full" multiline></TextInput>
         <Image className="w-[400] h-[150]" tintColor="white" source={require('../assets/SoundWave.png')}></Image>
       </View>
     </SafeAreaView>
