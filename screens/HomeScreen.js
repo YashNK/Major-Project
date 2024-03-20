@@ -1,13 +1,20 @@
 import { View, Text, Image, TouchableOpacity, ScrollView} from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React, { useContext, useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { AdjustmentsHorizontalIcon, Bars3CenterLeftIcon, UserIcon} from 'react-native-heroicons/solid'
+import { AdjustmentsHorizontalIcon, Bars3CenterLeftIcon, MicrophoneIcon, UserIcon} from 'react-native-heroicons/solid'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import RecCategories from './components/RecCategories'
 import { DrawerActions } from '@react-navigation/native' 
+import themeContext from './components/ThemeContext'
+import Navbar from './components/Navbar'
+import { useTranslation } from 'react-i18next'
 
 
 const HomeScreen = () => {
+
+  const theme = useContext(themeContext);
+
+  const {t} = useTranslation();
 
   const navigation = useNavigation();
 
@@ -18,33 +25,21 @@ const HomeScreen = () => {
     }, []);
 
   return (
-    <SafeAreaView className="bg-[#0a081c] flex-1 pt-1 px-2 relative">
+    <SafeAreaView style={[{backgroundColor: theme.backgroundColor}]} className="flex-1 pt-1 px-2 relative">
 
-      <View className="flex-row items-center justify-between pb-11">
-
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-          <Bars3CenterLeftIcon color="white" size={30}/>
-        </TouchableOpacity>
-
-        <Image source={require('../assets/AppLogo.png')} className="w-[60px] h-[60px]"/>
-
-        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-          <UserIcon color="white" size={30}/>
-        </TouchableOpacity>
-      
-      </View>
+      <Navbar/>
     
       <TouchableOpacity  onPress={() => navigation.navigate("Delayed Auditory FeedBack System")}>
     
       <View className="mb-11">
 
-        <View className="h-[130px] justify-center bg-violet-600 rounded-xl p-3 relative space-y-[-7px]">
+        <View style={[{backgroundColor:theme.secondaryColor}]} className="h-[130px] justify-center rounded-xl p-3 relative space-y-[-7px]">
 
           <Image source={require('../assets/HomeIMG.png')} className="w-[190px] h-[190px] absolute right-1 mb-2"/>
-          <Text className="text-white font-extrabold relative italic text-[15px]">Use Our</Text>
-          <Text className="text-white text-[40px] font-extrabold track">DELAYED</Text>
-          <Text className="text-white text-[17px] font-extrabold">AUDITORY FEEDBACK</Text>
-          <Text className="text-white text-[20px] font-extrabold">SYSTEM</Text>
+          <Text style={[{color:theme.textColor}]} className="font-extrabold relative italic mr-[150px] text-[15px]">{t('use-our')}</Text>
+          <Text style={[{color:theme.textColor}]} className="text-[20px] mr-[90px] font-extrabold track">{t('delayed')}</Text>
+          <Text style={[{color:theme.textColor}]} className="text-[17px] font-extrabold">{t('auditory')}</Text>
+          <Text style={[{color:theme.textColor}]} className="text-[20px] font-extrabold">{t('system')}</Text>
         
         </View>
 
@@ -53,7 +48,7 @@ const HomeScreen = () => {
       </TouchableOpacity>
 
       <View className=" justify-center flex-row pb-5">
-        <Text className="text-white underline text-xl">YOUR RECORDINGS</Text>
+        <Text style={[{color:theme.textColor}]} className="text-white underline text-xl">{t('your-recordings')}</Text>
       </View>
 
       <ScrollView>
@@ -64,16 +59,16 @@ const HomeScreen = () => {
 
       <TouchableOpacity onPress={() => navigation.navigate("Recordings")}>
         <View className="p-4 pb-2">
-          <Text className="text-white text-center underline">
-            View More
+          <Text style={[{color:theme.textColor}]} className="text-white text-center underline">
+          {t('view-more')}
           </Text>
         </View>
       </TouchableOpacity>
 
       
       <TouchableOpacity>
-      <View className="flex-row mt-3 mb-3 justify-center bg-violet-600 rounded-3xl p-3">
-        <Image source={require('../assets/MicLogo.png')} className="w-[35px] h-[35px]"/>
+      <View style={[{backgroundColor:theme.recCard}]} className="flex-row mt-3 mb-3 justify-center rounded-3xl p-3">
+        <MicrophoneIcon style={[{color:theme.iconColor}]} size={30} />
       </View>
       </TouchableOpacity>
     

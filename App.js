@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import GetStarted from './screens/GetStarted';
@@ -15,14 +15,23 @@ import CustomDrawer from './screens/components/CustomDrawer';
 import RecCard from './screens/components/RecCard';
 import { Cog6ToothIcon, FolderIcon, HomeIcon, MicrophoneIcon, UserCircleIcon, UserIcon } from 'react-native-heroicons/solid';
 import SettingScreen from './screens/SettingScreen';
+import { EventRegister } from 'react-native-event-listeners'
+import { useContext, useEffect, useState } from 'react';
+import theme from './screens/components/Theme';
+import themeContext from './screens/components/ThemeContext';
+import './screens/src/i18n/i18n.config';
+import { useTranslation } from 'react-i18next';
 
 const Stack = createNativeStackNavigator();
 
 const Drawer = createDrawerNavigator()
 
+
 function Root(){
+  const {t} = useTranslation();
+  
   return(
-    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false, drawerActiveBackgroundColor:"transparent", drawerActiveTintColor:"pink", drawerInactiveTintColor:"white", drawerLabelStyle:{marginLeft:-15, SettingScreen:90}}}>  
+    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false, drawerActiveBackgroundColor:"transparent", drawerActiveTintColor:"#7c3aed", drawerInactiveTintColor:"gray", drawerLabelStyle:{marginLeft:-15, SettingScreen:90}}}>  
 
         <Drawer.Screen name="Home" component={HomeScreen} options={{
           drawerIcon: ({color}) => (
@@ -59,9 +68,19 @@ function Root(){
 }
 
 export default function App() {
+
+  const [darkMode,setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const listener = EventRegister.addEventListener('ChangeTheme', (data) => {
+      setDarkMode(data)
+
+    })
+  })
+
   return (
-    
-    <NavigationContainer>
+    <themeContext.Provider value={darkMode === false ? theme.dark : theme.light}>
+    <NavigationContainer theme={darkMode === false ? DarkTheme : DefaultTheme}>
       
       <Stack.Navigator initialRouteName='GetStarted' screenOptions={{headerShown:false}}>
 
@@ -90,6 +109,7 @@ export default function App() {
       </Stack.Navigator>
     
     </NavigationContainer>
+    </themeContext.Provider>
     
   );
 }

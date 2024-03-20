@@ -1,21 +1,28 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigation } from '@react-navigation/native'
+import themeContext from './ThemeContext';
+import { MicrophoneIcon } from 'react-native-heroicons/solid';
+import { useTranslation } from 'react-i18next';
 
 const RecCard = ({title, time}) => {
 
   const navigation = useNavigation();
 
+  const {t} = useTranslation();
+
+  const theme = useContext(themeContext)
+
   return (
 
-      <View className=" bg-gray-600 mb-3 p-8 rounded-3xl flex-row items-center">
+      <View style={[{backgroundColor:theme.recCard}]} className="mb-3 p-8 rounded-3xl flex-row items-center">
 
-        <Image source={require('../../assets/MicLogo.png')} className="w-6 h-6"/>
+      <MicrophoneIcon style={[{color:theme.iconColor, marginRight:10}]} size={30}/>
 
         <View className="flex-col flex-1">
 
-            <Text className="text-white">{title}</Text>
-            <Text className="text-white">{time}</Text>
+            <Text style={[{color:theme.textColor}]} className="">{title}</Text>
+            <Text style={[{color:theme.textColor}]} className="">{time}</Text>
         
         </View>
 
@@ -23,7 +30,7 @@ const RecCard = ({title, time}) => {
 
             <View className="bg-white p-1 px-4 rounded-3xl">
 
-                <Text className="text-black text-[10px] font-extrabold underline">VIEW RECORDING</Text>
+                <Text className="text-black text-[10px] font-extrabold underline">{t('view-recording')}</Text>
 
             </View>
 

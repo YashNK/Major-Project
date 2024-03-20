@@ -1,9 +1,20 @@
 import { View, Text, Button, TouchableOpacity, Image, StyleSheet, FlatList } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ArrowRightCircleIcon } from 'react-native-heroicons/solid'
+import { ArrowRightCircleIcon, LanguageIcon } from 'react-native-heroicons/solid'
+import { useTranslation } from 'react-i18next';
 
 const GetStarted = ({navigation}) => {
+
+  const {t, i18n} = useTranslation();
+
+  const changeLanguage= () => {
+    if (i18n.language === 'en'){
+      i18n.changeLanguage('mal')
+    }else{
+      i18n.changeLanguage('en')
+    }
+  }
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -31,27 +42,34 @@ const GetStarted = ({navigation}) => {
       </View>
 
      
-        <View className=" bg-slate-100 p-4 w-full h-[270px] rounded-t-[30px] justify-start">
+        <View className=" bg-slate-100 p-4 w-full h-[300px] rounded-t-[30px] justify-start">
           
           <TouchableOpacity onPress={() => navigation.navigate("SignUp")} className="flex-row bg-red-400 h-[50px] mt-2 justify-center items-center w-full rounded-full">
-            <Text className="text-white mr-9 ml-4 font-medium text-lg">Create new account</Text>
+            <Text className="text-white mr-9 ml-4 font-medium text-lg">{t('create')}</Text>
             <ArrowRightCircleIcon color="white" size={30}/>
           </TouchableOpacity>
           
           <TouchableOpacity className=" pt-6 items-center" >
-          <Text  onPress={() => navigation.navigate("Login")} className="text-slate-600 font-medium">I already have an account</Text>
+          <Text  onPress={() => navigation.navigate("Login")} className="text-slate-600 font-medium">{t('already')}</Text>
           </TouchableOpacity>
           
           <View className="items-center pt-6 mt-6 border-t-[0.5px] border-black mx-10">
             <Text className="text-slate-600 font-medium">
-              Sign in using
+              {t('sign-in')}
             </Text>
             
             
-            <View className="mt-4 bg-white p-2 rounded-full shadow-md shadow-red-500">
+            <View className="mt-6 bg-white p-2 rounded-full shadow-md shadow-red-500">
               <Image className="w-[20px] h-[20px]" source={{uri: "https://logos-world.net/wp-content/uploads/2020/09/Google-Symbol.png"}}/>
             </View>
 
+          </View>
+
+          <View className="flex-row justify-center mt-5">
+            <LanguageIcon style={[{color:"black", marginRight:10}]} size={20}/>
+            <TouchableOpacity onPress={changeLanguage}>
+              <Text className="">{t('translate')} {i18n.language !=='en' ? 'english': 'malayalam'}</Text>
+            </TouchableOpacity>
           </View>
 
         </View>

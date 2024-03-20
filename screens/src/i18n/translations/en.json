@@ -1,0 +1,33 @@
+{
+    "comment":"Drawer Texts!",
+    "home":"Home",
+    "profile":"Profile",
+    "delay-full":"Delayed Auditory FeedBack System",
+    "recordings":"Recordings",
+
+    "comment1":"Home Screen!",
+    "use-our":"Use Our",
+    "delayed":"DELAYED",
+    "auditory":"AUDITORY FEEDBACK",
+    "system":"SYSTEM",
+    "your-recordings":"Your Recordings",
+    "view-more":"View More",
+    "view-recording":"VIEW RECORDING",
+
+
+    "Comment2":"Settings Screen!",
+    "settings":"Settings",
+    "theme":"Theme:",
+    "light-mode":"Light Mode",
+    "more-info":"More info and Support:",
+    "about-us":"About Us",
+    "contact":"Contact Us",
+    "translate":"Translate to",
+    "logout":"Log Out",
+
+    "comment3":"Get Started Screen!",
+    "create":"Create new account",
+    "already":"I already have an account",
+    "sign-in":"Sign in using"
+
+}

@@ -1,11 +1,16 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React, { useContext, useLayoutEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Bars3CenterLeftIcon, UserIcon } from 'react-native-heroicons/solid'
 import { DrawerActions, useNavigation } from '@react-navigation/native' 
 import RecCategories from './components/RecCategories'
+import Navbar from './components/Navbar'
+import themeContext from './components/ThemeContext'
+
 
 const SavedRecodings = () => {
+
+  const theme=useContext(themeContext)
 
   const navigation = useNavigation();
 
@@ -16,33 +21,19 @@ const SavedRecodings = () => {
     }, []);
 
   return (
-    <SafeAreaView className="bg-[#0a081c] flex-1 pt-1 px-2 relative">
+    <SafeAreaView style={[{backgroundColor:theme.backgroundColor}]} className="flex-1 pt-1 px-2 relative">
 
-      <View className="flex-row items-center justify-between pb-4">
+      <Navbar/>
 
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-          <Bars3CenterLeftIcon color="white" size={30}/>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-          <Image source={require('../assets/AppLogo.png')} className="w-[60px] h-[60px]"/>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-          <UserIcon color="white" size={30}/>
-        </TouchableOpacity>
-      
-      </View>
-
-      <View className=" justify-center flex-row pb-5">
-        <Text className="text-white underline text-xl">YOUR RECORDINGS</Text>
+      <View className=" justify-center flex-row pb-2 mt-[-10]">
+        <Text style={[{color:theme.textColor}]} className="text-white underline text-xl">YOUR RECORDINGS</Text>
       </View>
 
       <ScrollView>
-        <View className=" bg-slate-800 mb-5 mx-4 rounded-3xl">
-        <View className="mt-3 rounded-3xl">
-        <RecCategories/>
-        </View>
+        <View className="mb-5 rounded-3xl">
+          <View className="mt-3 rounded-3xl">
+          <RecCategories/>
+          </View>
         </View>
       </ScrollView>
 
