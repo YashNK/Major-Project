@@ -1,0 +1,50 @@
+{
+    "comment": "¡Textos del cajón!",
+    "home": "Inicio",
+    "profile": "Perfil",
+    "delay-full": "Sistema de Retroalimentación Auditiva Retardada",
+    "recordings": "Grabaciones",
+
+    "comment1": "¡Pantalla de inicio!",
+    "use-our": "Usa Nuestro",
+    "delayed": "RETARDADA",
+    "auditory": "RETROALIMENTACIÓN AUDITIVA",
+    "system": "SISTEMA",
+    "your-recordings": "Tus Grabaciones",
+    "view-more": "Ver Más",
+    "view-recording": "VER GRABACIÓN",
+
+
+    "Comment2": "¡Pantalla de Configuración!",
+    "settings": "Configuración",
+    "theme": "Tema:",
+    "light-mode": "Modo Claro",
+    "more-info": "Más Información y Soporte:",
+    "about-us": "Acerca de Nosotros",
+    "contact": "Contáctanos",
+    "translate": "Traducir",
+    "logout": "Cerrar Sesión",
+    "language": "¡Selecciona tu Idioma!",
+
+    "comment3": "¡Pantalla de Inicio!",
+    "create": "Crear nueva cuenta",
+    "already": "Ya tengo una cuenta",
+    "sign-in": "Iniciar sesión usando",
+
+    "comment4": "Registrarse",
+    "fluent": "¡Fluidez Hecha Simple con BetterSpeak!",
+    "sign-up": "Registrarse",
+
+    "comment5": "¡Iniciar Sesión!",
+    "login": "INICIAR SESIÓN",
+
+    "comment6": "¡Pantalla de Perfil!",
+    "personal-info": "INFORMACIÓN PERSONAL:",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico",
+
+    "comment7": "¡Pantalla de DAF!",
+    "volume": "Volumen",
+    "delay": "Retardo",
+    "type": "Escribe tu Discurso Aquí"
+}

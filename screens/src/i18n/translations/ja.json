@@ -1,0 +1,54 @@
+{
+    "comment": "引き出しのテキスト！",
+    "home": "ホーム",
+    "profile": "プロフィール",
+    "delay-full": "遅延オーディトリーフィードバックシステム",
+    "recordings": "録音",
+
+    "comment1": "ホーム画面！",
+    "use-our": "当社を使用",
+    "delayed": "遅れた",
+    "auditory": "聴覚フィードバック",
+    "system": "システム",
+    "your-recordings": "あなたの録音",
+    "view-more": "もっと見る",
+    "view-recording": "録音を見る",
+
+
+    "Comment2": "設定画面！",
+    "settings": "設定",
+    "theme": "テーマ：",
+    "light-mode": "ライトモード",
+    "more-info": "詳細情報とサポート：",
+    "about-us": "当社について",
+    "contact": "お問い合わせ",
+    "translate": "翻訳",
+    "logout": "ログアウト",
+    "language": "言語",
+    "select-language": "言語を選択してください！",
+    "edit-profile": "プロフィールを編集",
+    "privacy": "プライバシー設定",
+    "delete-account": "アカウントを削除",
+
+    "comment3": "開始画面！",
+    "create": "新しいアカウントを作成",
+    "already": "すでにアカウントを持っています",
+    "sign-in": "使用してサインイン",
+
+    "comment4": "サインアップ",
+    "fluent": "BetterSpeakで簡単に流暢に！",
+    "sign-up": "サインアップ！",
+
+    "comment5": "ログイン！",
+    "login": "ログイン",
+
+    "comment6": "プロフィール画面！",
+    "personal-info": "個人情報：",
+    "phone": "電話",
+    "email": "Eメール",
+
+    "comment7": "DAF画面！",
+    "volume": "音量",
+    "delay": "遅延",
+    "type": "ここにスピーチを入力してください"
+}

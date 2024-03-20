@@ -1,2 +1,8 @@
 export {default as en} from './en.json'
 export {default as mal} from './mal.json'
+export {default as hin} from './hin.json'
+export {default as tam} from './tam.json'
+export {default as pu } from './pu.json'
+export {default as si } from './si.json'
+export {default as sp } from './sp.json'
+export {default as ja } from './ja.json'

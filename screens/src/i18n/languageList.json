@@ -1,0 +1,26 @@
+{
+    "en": {
+        "name": "English"
+    },
+    "mal": {
+        "name":"Malayalam"
+    },
+    "hin": {
+        "name":"hindi"
+    },
+    "tam": {
+        "name":"Tamil"
+    },
+    "pu": {
+        "name":"Punjabi"
+    },
+    "ja": {
+        "name":"Japanese"
+    },
+    "si": {
+        "name":"Sindhi"
+    },
+    "sp": {
+        "name":"Spanish"
+    }
+}

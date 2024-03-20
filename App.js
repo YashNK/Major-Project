@@ -31,7 +31,7 @@ function Root(){
   const {t} = useTranslation();
   
   return(
-    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false, drawerActiveBackgroundColor:"transparent", drawerActiveTintColor:"#7c3aed", drawerInactiveTintColor:"gray", drawerLabelStyle:{marginLeft:-15, SettingScreen:90}}}>  
+    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false, drawerActiveBackgroundColor:"transparent", drawerActiveTintColor:"#d97ecf", drawerInactiveTintColor:"gray", drawerLabelStyle:{marginLeft:-15, SettingScreen:90}}}>  
 
         <Drawer.Screen name="Home" component={HomeScreen} options={{
           drawerIcon: ({color}) => (
