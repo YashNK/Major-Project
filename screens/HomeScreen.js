@@ -52,7 +52,7 @@ const HomeScreen = () => {
       </View>
 
       <ScrollView>
-        <View className="mb-[-865]">
+        <View className="mb-[7]">
         <RecCategories/>
         </View>
       </ScrollView>

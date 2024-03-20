@@ -7,8 +7,11 @@ import RecCategories from './components/RecCategories'
 import { DrawerActions } from '@react-navigation/native' 
 import Navbar from './components/Navbar'
 import themeContext from './components/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
 const ProfilePage = () => {
+
+  const {t} = useTranslation();
 
   const theme = useContext(themeContext);
 
@@ -26,7 +29,7 @@ const ProfilePage = () => {
     <Navbar/>
 
     <View className="flex-2 pb-7 items-center">
-        <Text style={[{color:theme.textColor}]} className="text-white font-black text-center tracking-widest">POFILE</Text>
+        <Text style={[{color:theme.textColor}]} className="text-white font-black text-center tracking-widest">{t("profile")}</Text>
         <UserCircleIcon size={155} style={[{color:theme.cardColor}]}/>
         <Text style={[{color:theme.textColor}]} className="text-white text-lg pb-4 font-black text-center tracking-widest">Name</Text>
         <Text style={[{backgroundColor:theme.cardColor, color:theme.textColor}]} className="text-white p-1 px-24 rounded-3xl font-black text-center tracking-widest">User Name</Text>
@@ -34,7 +37,7 @@ const ProfilePage = () => {
 
     <View className="mx-4">
 
-        <Text style={[{color:theme.textColor}]} className="text-white pb-3 font-black tracking-widest">PERSONAL INFORMATION</Text>
+        <Text style={[{color:theme.textColor}]} className="text-white pb-3 font-black tracking-widest">{t("personal-info")}</Text>
 
     </View>
 
@@ -44,7 +47,7 @@ const ProfilePage = () => {
 
             <PhoneIcon size={12} style={[{color:theme.textColor}]}/>
             <Text style={[{color:theme.textColor}]} className="pl-3 flex-1">
-                Phone
+                {t("phone")}
             </Text>
             <Text style={[{color:theme.textColor}]} className="right-2">
                 9034****01
@@ -56,7 +59,7 @@ const ProfilePage = () => {
             
             <EnvelopeIcon size={12} style={[{color:theme.textColor}]}/>
             <Text style={[{color:theme.textColor}]} className="pl-3 flex-1">
-                Email
+                {t("email")}
             </Text>
             <Text style={[{color:theme.textColor}]} className="right-2">
                 marian@gmail.com
@@ -67,11 +70,11 @@ const ProfilePage = () => {
     </View>
 
     <Text style={[{color:theme.textColor}]} className="text-white pb-3 font-black tracking-widest mx-4">
-        YOUR RECORDINGS
+        {t("your-recordings")}
     </Text>
 
     <ScrollView>
-      <View className="mb-[-865]">
+      <View className="mb-2">
         <RecCategories/>
       </View>
     </ScrollView>
@@ -79,7 +82,7 @@ const ProfilePage = () => {
     <TouchableOpacity onPress={() => navigation.navigate("Recordings")}>
         <View className="p-4 mb-3">
           <Text style={[{color:theme.textColor}]} className="text-white text-center underline">
-            View More
+            {t("view-more")}
           </Text>
         </View>
       </TouchableOpacity>

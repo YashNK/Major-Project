@@ -6,8 +6,11 @@ import { DrawerActions, useNavigation } from '@react-navigation/native'
 import Slider from '@react-native-community/slider'
 import Navbar from './components/Navbar'
 import themeContext from './components/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
 const DelayedAuditoryFeedBack = () => {
+
+  const {t} = useTranslation();
 
   const theme = useContext(themeContext)
 
@@ -32,7 +35,7 @@ const DelayedAuditoryFeedBack = () => {
         <View className="flex-row justify-between">
 
         <Text style={[{color:theme.textColor}]} className="font-bold">
-          Volume:
+          {t("volume")}
         </Text>
 
         <Text className="font-bold">
@@ -57,7 +60,7 @@ const DelayedAuditoryFeedBack = () => {
       <View className="flex-row justify-between">
       
       <Text style={[{color:theme.textColor}]} className="font-bold">
-          Delay:
+          {t("delay")}
       </Text>
 
       <Text className="font-bold">
@@ -81,8 +84,8 @@ const DelayedAuditoryFeedBack = () => {
 
       </View>
 
-      <View style={[{backgroundColor:theme.secondaryColor}]} className="h-[200px]">
-        <TextInput placeholder='Type Your Speech Here' className="text-center px-7 mb-20 rounded-xl w-full h-full" multiline></TextInput>
+      <View style={[{backgroundColor:theme.cardColor}]} className="mx-6 rounded-xl h-[200px]">
+        <TextInput placeholder={t("type")} className="text-center px-7 mb-20 rounded-xl w-full h-full" multiline></TextInput>
       </View>
     </SafeAreaView>
   )

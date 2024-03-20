@@ -1,8 +1,11 @@
 import { View, Text, Button, Image, TextInput } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 
 const SignUp = ({navigation}) => {
+
+  const {t} = useTranslation();
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -29,7 +32,7 @@ const SignUp = ({navigation}) => {
         <View className="items-center mb-8">
 
           <Text className="text-white mx-11 text-center text-extrobold ">
-          Fluency Made Simple with BetterSpeak!
+          {t('fluent')}
           </Text>
 
         </View>
@@ -48,7 +51,7 @@ const SignUp = ({navigation}) => {
 
         <View className=" items-center mb-5">
           
-          <Text className="text-black rounded-lg p-3 px-8 bg-white font-extrabold"  onPress={() => navigation.navigate("Login")}>Sign Up</Text>
+          <Text className="text-black rounded-lg p-3 px-8 bg-white font-extrabold"  onPress={() => navigation.navigate("Login")}>{t("sign-up")}</Text>
 
         </View>  
 

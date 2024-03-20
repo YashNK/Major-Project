@@ -30,7 +30,7 @@ const RecCard = ({title, time}) => {
 
             <View className="bg-white p-1 px-4 rounded-3xl">
 
-                <Text className="text-black text-[10px] font-extrabold underline">{t('view-recording')}</Text>
+                <Text className="text-black text-[10px] w-24 text-center font-extrabold underline">{t('view-recording')}</Text>
 
             </View>
 

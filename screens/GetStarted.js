@@ -42,10 +42,10 @@ const GetStarted = ({navigation}) => {
       </View>
 
      
-        <View className=" bg-slate-100 p-4 w-full h-[300px] rounded-t-[30px] justify-start">
+        <View className=" bg-slate-100 p-4 w-full h-[340px] rounded-t-[30px] justify-start">
           
-          <TouchableOpacity onPress={() => navigation.navigate("SignUp")} className="flex-row bg-red-400 h-[50px] mt-2 justify-center items-center w-full rounded-full">
-            <Text className="text-white mr-9 ml-4 font-medium text-lg">{t('create')}</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("SignUp")} className="flex-row bg-red-400 h-[60px] mt-2 justify-center items-center w-full rounded-full">
+            <Text className="text-white mr-9 ml-4 w-[200] font-medium text-lg">{t('create')}</Text>
             <ArrowRightCircleIcon color="white" size={30}/>
           </TouchableOpacity>
           
@@ -54,7 +54,7 @@ const GetStarted = ({navigation}) => {
           </TouchableOpacity>
           
           <View className="items-center pt-6 mt-6 border-t-[0.5px] border-black mx-10">
-            <Text className="text-slate-600 font-medium">
+            <Text className="text-slate-600 w-36 text-center font-medium">
               {t('sign-in')}
             </Text>
             
@@ -68,7 +68,7 @@ const GetStarted = ({navigation}) => {
           <View className="flex-row justify-center mt-5">
             <LanguageIcon style={[{color:"black", marginRight:10}]} size={20}/>
             <TouchableOpacity onPress={changeLanguage}>
-              <Text className="">{t('translate')} {i18n.language !=='en' ? 'english': 'malayalam'}</Text>
+              <Text className="">{i18n.language !=='en' ? 'English': 'Malayalam'}</Text>
             </TouchableOpacity>
           </View>
 

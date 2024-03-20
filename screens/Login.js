@@ -2,9 +2,12 @@ import { View, Text, Button, TextInput, Image } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BlurView } from 'expo-blur';
+import { useTranslation } from 'react-i18next';
 
 
 const Login = ({navigation}) => {
+
+  const {t} = useTranslation();
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -31,7 +34,7 @@ const Login = ({navigation}) => {
         <View className="items-center mb-8">
 
           <Text className="text-white mx-11 text-center text-extrobold ">
-          Fluency Made Simple with BetterSpeak!
+          {t('fluent')}
           </Text>
 
         </View>
@@ -45,8 +48,8 @@ const Login = ({navigation}) => {
 
         <View className="mb-3 items-center">
 
-          <Text className="text-white rounded-lg p-3 mb-5 px-8  font-extrabold" onPress={() => navigation.navigate("Home")}>LOGIN</Text>
-          <Text className="text-black rounded-lg p-3 px-8 bg-white font-extrabold"  onPress={() => navigation.navigate("SignUp")}>Sign Up</Text>
+          <Text className="text-white rounded-lg p-3 mb-5 px-8  font-extrabold" onPress={() => navigation.navigate("Home")}>{t("login")}</Text>
+          <Text className="text-black rounded-lg p-3 px-8 bg-white font-extrabold"  onPress={() => navigation.navigate("SignUp")}>{t("sign-up")}</Text>
 
         </View>  
 

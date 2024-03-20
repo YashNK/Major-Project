@@ -28,6 +28,22 @@
     "comment3":"Get Started Screen!",
     "create":"Create new account",
     "already":"I already have an account",
-    "sign-in":"Sign in using"
+    "sign-in":"Sign in using",
 
+    "comment4":"Sign Up",
+    "fluent":"Fluency Made Simple with BetterSpeak!",
+    "sign-up":"Sign Up!",
+
+    "comment5":"Log In!",
+    "login":"LOGIN",
+
+    "comment6":"Profile Screen!",
+    "personal-info":"PERSONAL INFORMATION:",
+    "phone":"Phone",
+    "email":"Email",
+
+    "comment7":"DAF Screen!",
+    "volume":"Volume",
+    "delay":"Delay",
+    "type":"Type Your Speech Here"
 }

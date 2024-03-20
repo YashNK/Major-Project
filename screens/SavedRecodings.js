@@ -6,9 +6,12 @@ import { DrawerActions, useNavigation } from '@react-navigation/native'
 import RecCategories from './components/RecCategories'
 import Navbar from './components/Navbar'
 import themeContext from './components/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
 
 const SavedRecodings = () => {
+
+  const {t} = useTranslation();
 
   const theme=useContext(themeContext)
 
@@ -26,7 +29,7 @@ const SavedRecodings = () => {
       <Navbar/>
 
       <View className=" justify-center flex-row pb-2 mt-[-10]">
-        <Text style={[{color:theme.textColor}]} className="text-white underline text-xl">YOUR RECORDINGS</Text>
+        <Text style={[{color:theme.textColor}]} className="text-white underline text-xl">{t("your-recordings")}</Text>
       </View>
 
       <ScrollView>
