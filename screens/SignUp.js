@@ -49,7 +49,7 @@ const SignUp = ({navigation}) => {
 
         </View>   
 
-        <View className=" items-center mb-5">
+        <View className=" items-center mt-4 mb-5">
           
           <Text className="text-black rounded-lg p-3 px-8 bg-white font-extrabold"  onPress={() => navigation.navigate("Login")}>{t("sign-up")}</Text>
 

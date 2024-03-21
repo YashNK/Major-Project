@@ -31,7 +31,7 @@ function Root(){
   const {t} = useTranslation();
   
   return(
-    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false, drawerActiveBackgroundColor:"transparent", drawerActiveTintColor:"#d97ecf", drawerInactiveTintColor:"gray", drawerLabelStyle:{marginLeft:-15, SettingScreen:90}}}>  
+    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false, drawerActiveBackgroundColor:"transparent", drawerActiveTintColor:"#d97ecf", drawerInactiveTintColor:"#bfbfbf", drawerLabelStyle:{marginLeft:-15, SettingScreen:90}}}>  
 
         <Drawer.Screen name="Home" component={HomeScreen} options={{
           drawerIcon: ({color}) => (
@@ -51,11 +51,11 @@ function Root(){
           )
         }}/>
 
-        <Drawer.Screen name="Recordings" component={SavedRecodings} options={{
+        {/* <Drawer.Screen name="Recordings" component={SavedRecodings} options={{
           drawerIcon: ({color}) => (
               <FolderIcon size={20} color={color}/>
           )
-        }}/>
+        }}/> */}
 
         <Drawer.Screen name="Settings" component={SettingScreen} options={{
           drawerIcon: ({color}) => (
@@ -79,7 +79,7 @@ export default function App() {
   })
 
   return (
-    <themeContext.Provider value={darkMode === false ? theme.dark : theme.light}>
+    <themeContext.Provider value={darkMode === true ? theme.dark : theme.light}>
     <NavigationContainer theme={darkMode === false ? DarkTheme : DefaultTheme}>
       
       <Stack.Navigator initialRouteName='GetStarted' screenOptions={{headerShown:false}}>
@@ -96,7 +96,7 @@ export default function App() {
 
         <Stack.Screen name="Delayed Auditory FeedBack System" component={Root}/>
 
-        <Stack.Screen name="Recordings" component={Root}/>
+        {/* <Stack.Screen name="Recordings" component={Root}/> */}
 
         <Stack.Screen name="ViewRecordings" component={ViewRecording}/>
 

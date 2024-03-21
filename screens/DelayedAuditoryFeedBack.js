@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native'
+import { View, Text, TouchableOpacity, Image, TextInput, StyleSheet } from 'react-native'
 import React, { useContext, useLayoutEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Bars3CenterLeftIcon, UserIcon } from 'react-native-heroicons/solid'
@@ -7,10 +7,12 @@ import Slider from '@react-native-community/slider'
 import Navbar from './components/Navbar'
 import themeContext from './components/ThemeContext'
 import { useTranslation } from 'react-i18next'
+import { WebView } from 'react-native-webview';
 
 const DelayedAuditoryFeedBack = () => {
 
   const {t} = useTranslation();
+  
 
   const theme = useContext(themeContext)
 
@@ -24,71 +26,48 @@ const DelayedAuditoryFeedBack = () => {
         headerShown: false,
       })
     }, []);
+    
 
   return (
     <SafeAreaView style={{backgroundColor:theme.backgroundColor}} className="flex-1 pt-1 px-2 relative">
 
       <Navbar/>
 
-      <View className="mx-10 flex-2 mb-12">
+      <View className="flex-1">
 
-        <View className="flex-row justify-between">
+      <Text style={{color:theme.textColor}} className="text-white uppercase mt-2 font-bold text-center mb-5">{t('delay-full')}</Text>
 
-        <Text style={[{color:theme.textColor}]} className="font-bold">
-          {t("volume")}
-        </Text>
-
-        <Text className="font-bold">
-          {volume}
-        </Text>
-
-      </View>
-
-      <View className="items-center mb-9">
-        <Slider
-          style={{width: 345, height: 40}}
-          minimumValue={0}
-          maximumValue={1}
-          minimumTrackTintColor={theme.textColor}
-          maximumTrackTintColor='gray'
-          thumbTintColor={theme.textColor}
-          value={0.5}
-          onValueChange={value => setVolume(parseInt(value * 100) + "%")}
-        />
-      </View>
-
-      <View className="flex-row justify-between">
+      <View style={{backgroundColor:theme.tertiaryColor}} className="h-[30%] pb-3 rounded-lg mx-4"> 
+      <WebView
+      source={{ uri: 'https://delayed-auditory-feedback-3ued.onrender.com/' }}
+      style={styles.webview}
+      backgroundColor={'transparent'}
+      bounces={false}
+      javaScriptEnabled={true}
+      domStorageEnabled={true}
+      />
       
-      <Text style={[{color:theme.textColor}]} className="font-bold">
-          {t("delay")}
-      </Text>
-
-      <Text className="font-bold">
-          {delay}
-      </Text>
 
       </View>
 
-      <View className="items-center">
-        <Slider
-          style={{width: 345, height: 40}}
-          minimumValue={0}
-          maximumValue={1}
-          minimumTrackTintColor={theme.textColor}
-          maximumTrackTintColor='gray'
-          thumbTintColor={theme.textColor}
-          value={0.5}
-          onValueChange={value => setDelay(parseInt(value * 100) + "%")}
-        />
-      </View>
+      <Text style={{color:theme.textColor}} className="text-center pt-2">{t("wait")}</Text>
 
       </View>
 
-      <View style={[{backgroundColor:theme.cardColor}]} className="mx-6 rounded-xl h-[200px]">
-        <TextInput placeholder={t("type")} className="text-center px-7 mb-20 rounded-xl w-full h-full" multiline></TextInput>
-      </View>
+     
+      
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  webview: {
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
+});
 
 export default DelayedAuditoryFeedBack
