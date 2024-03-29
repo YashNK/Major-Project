@@ -17,7 +17,7 @@ const Navbar = () => {
       }, []);
 
   return (
-    <View className="flex-row items-center justify-between mb-9 pl-4 pr-4 rounded-2xl">
+    <View style={{borderBottomColor:theme.recCard}} className="flex-row items-center justify-between mb-6 pl-3 pr-3 rounded-2xl border-b-[3px] pb-4">
 
         <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
         <Bars3CenterLeftIcon style={[{color:theme.iconColor}]} size={30} />

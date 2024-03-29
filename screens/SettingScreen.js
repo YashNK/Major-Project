@@ -47,7 +47,7 @@ const SettingScreen = () => {
       <Text style={{color:theme.textColor}} className=" font-bold pl-1 mt-4">{t('theme')}</Text>
         <View style={{backgroundColor:theme.cardColor}}  className="flex-row items-center p-2 rounded-lg mt-2">
           <LightBulbIcon style={[{color:theme.iconColor, marginRight:10}]} size={20} />
-          <Text style={[{color:theme.textColor}]} className="flex-1">{t('light-mode')}</Text>
+          <Text style={[{color:theme.textColor}]} className="flex-1">{t('dark-mode')}</Text>
           <Switch value={darkMode} onValueChange={(value) => {
             setDarkMode(value);
             EventRegister.emit('ChangeTheme',value)
@@ -90,8 +90,8 @@ const SettingScreen = () => {
           </View>
 
           <View className="flex-row mt-2 mb-2">
-            <LanguageIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
-            <TouchableOpacity onPress={() => setVisible(true)}>
+            <TouchableOpacity className="flex-row items-center" onPress={() => setVisible(true)}>
+              <LanguageIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
               <Text style={{color:theme.textColor}}>{t('language')}</Text>
             </TouchableOpacity>
           </View>

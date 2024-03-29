@@ -13,12 +13,17 @@
     "your-recordings":"Your Recordings",
     "view-more":"View More",
     "view-recording":"VIEW RECORDING",
+    "welcome-title":"Welcome",
+    "welcome":"Welcome to BetterSpeak a Delayed Auditory Feedback System. This innovative app seamlessly integrates cutting-edge technology with user-friendly design to aid individuals in enhancing speech fluency and mitigating stuttering.",
+    "click":"Click Here",
+    "instagram":"instagram",
 
 
     "Comment2":"Settings Screen!",
     "settings":"Settings",
     "theme":"Theme:",
     "light-mode":"Light Mode",
+    "dark-mode":"Dark Mode",
     "more-info":"More info and Support:",
     "about-us":"About Us",
     "contact":"Contact Us",
@@ -50,5 +55,6 @@
     "comment7":"DAF Screen!",
     "volume":"Volume",
     "delay":"Delay",
-    "type":"Type Your Speech Here"
+    "type":"Type Your Speech Here",
+    "wait":"( Our DAF module may take some time to load. Please be patient. )"
 }
