@@ -40,7 +40,7 @@ const DelayedAuditoryFeedBack = () => {
       <View style={{backgroundColor:theme.tertiaryColor}} className="h-[35%] rounded-lg mx-4"> 
       <WebView
       source={{ uri: 'https://delayed-auditory-feedback-3ued.onrender.com/' }}
-      style={styles.webview}
+      style={{ marginTop: 20 }}
       backgroundColor={'transparent'}
       bounces={false}
       javaScriptEnabled={true}
@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: 'white',
+    marginTop:50
   },
 });
 

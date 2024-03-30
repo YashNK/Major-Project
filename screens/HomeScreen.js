@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import i18next, { languageResources } from './src/i18n/i18n.config';
 import languageList from './src/i18n/languageList.json'
 import { FlatList } from 'react-native-gesture-handler'
+import { requestPermissionsAsync } from 'expo-av/build/Audio'
 
 
 const HomeScreen = () => {
@@ -115,7 +116,9 @@ const HomeScreen = () => {
       <ScrollView>
 
       {/* Daf */}    
-      <TouchableOpacity  onPress={() => navigation.navigate("Delayed Auditory FeedBack System")}>
+      <TouchableOpacity  onPress={async() => {
+        await requestPermissionsAsync()
+        navigation.navigate("Delayed Auditory FeedBack System")}}>
     
       <View className="pb-4">
 
