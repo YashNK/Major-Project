@@ -10,7 +10,7 @@ const theme ={
         recCard:"#c2cccf",
         iconColor:'#404040',
         logoColor:'black',
-        link:"#2c5c75"
+        link:"#2c5c75",
     },
     dark:{
         theme:'dark',

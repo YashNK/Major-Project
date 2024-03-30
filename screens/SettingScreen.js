@@ -57,53 +57,69 @@ const SettingScreen = () => {
         {/* Profile */}
         <Text style={{color:theme.textColor}} className="mt-5 font-bold pl-1">{t('profile')}:</Text>
         <View style={{backgroundColor:theme.cardColor}} className="p-2 rounded-lg mt-2">
+          <TouchableOpacity onPress={() => navigation.navigate("Edit Profile")}>
           <View className="flex-row mt-2 mb-2">
             <PencilSquareIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
             <Text style={[{color:theme.textColor}]} className="">{t('edit-profile')}</Text>
           </View>
+          </TouchableOpacity>
  
+          <TouchableOpacity onPress={() => navigation.navigate("Privacy Settings")}>
           <View className="flex-row mt-2 mb-2">
             <ShieldExclamationIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
             <Text style={[{color:theme.textColor}]} className="">{t('privacy')}</Text>
           </View>
+          </TouchableOpacity>
 
-          <View className="flex-row mt-2 mb-2">
+          <TouchableOpacity onPress={() => navigation.navigate("Delete Account")}>
+            <View className="flex-row mt-2 mb-2">
             <TrashIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
-            <TouchableOpacity>
               <Text style={{color:theme.textColor}}>{t('delete-account')}</Text>
-            </TouchableOpacity>
-          </View>
+            </View>
+          </TouchableOpacity>
+          
 
         </View>
 
         {/* More Info and Support */}
         <Text style={{color:theme.textColor}} className="mt-5 font-bold pl-1">{t('more-info')}</Text>
+
+        
         <View style={{backgroundColor:theme.cardColor}} className="p-2 rounded-lg mt-2">
+
+        <TouchableOpacity onPress={() => navigation.navigate("About Us")}>
           <View className="flex-row mt-2 mb-2">
             <ExclamationCircleIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
             <Text style={[{color:theme.textColor}]} className="">{t('about-us')}</Text>
           </View>
- 
+        </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate("Contact Us")}>
           <View className="flex-row mt-2 mb-2">
             <EnvelopeIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
             <Text style={[{color:theme.textColor}]} className="">{t('contact')}</Text>
           </View>
+          </TouchableOpacity>
+          
 
-          <View className="flex-row mt-2 mb-2">
-            <TouchableOpacity className="flex-row items-center" onPress={() => setVisible(true)}>
+          <TouchableOpacity className="flex-row items-center" onPress={() => setVisible(true)}>
+            <View className="flex-row mt-2 mb-2">
               <LanguageIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
               <Text style={{color:theme.textColor}}>{t('language')}</Text>
-            </TouchableOpacity>
-          </View>
+            </View>
+          </TouchableOpacity>
+          
 
         </View>
 
         {/* Login */}
         <Text style={{color:theme.textColor}} className="mt-5 font-bold pl-1">{t('logout')}:</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
         <View style={{backgroundColor:theme.cardColor}} className="flex-row p-2 pb-4 pt-4 rounded-lg mt-2 mb-2">
           <ArrowLeftStartOnRectangleIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
           <Text style={[{color:theme.textColor}]} className="">{t('logout')}</Text>
         </View>
+        </TouchableOpacity>
 
         <Modal
         animationType='fade'

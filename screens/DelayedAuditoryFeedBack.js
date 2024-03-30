@@ -37,7 +37,7 @@ const DelayedAuditoryFeedBack = () => {
 
       <Text style={{color:theme.textColor}} className="text-white uppercase mt-2 font-bold text-center mb-5">{t('delay-full')}</Text>
 
-      <View style={{backgroundColor:theme.tertiaryColor}} className="h-[30%] pb-3 rounded-lg mx-4"> 
+      <View style={{backgroundColor:theme.tertiaryColor}} className="h-[35%] rounded-lg mx-4"> 
       <WebView
       source={{ uri: 'https://delayed-auditory-feedback-3ued.onrender.com/' }}
       style={styles.webview}

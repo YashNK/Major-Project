@@ -21,6 +21,11 @@ import theme from './screens/components/Theme';
 import themeContext from './screens/components/ThemeContext';
 import './screens/src/i18n/i18n.config';
 import { useTranslation } from 'react-i18next';
+import EditProfile from './screens/EditProfile';
+import PrivacySettings from './screens/PrivacySettings';
+import DeleteAccount from './screens/DeleteAccount';
+import ContactUs from './screens/ContactUs';
+import AboutUs from './screens/AboutUs';
 
 const Stack = createNativeStackNavigator();
 
@@ -80,9 +85,9 @@ export default function App() {
 
   return (
     <themeContext.Provider value={darkMode === true ? theme.dark : theme.light}>
-    <NavigationContainer theme={darkMode === false ? DarkTheme : DefaultTheme}>
+    <NavigationContainer theme={darkMode === false ?  DefaultTheme : DarkTheme}>
       
-      <Stack.Navigator initialRouteName='GetStarted' screenOptions={{headerShown:false}}>
+      <Stack.Navigator  initialRouteName='GetStarted' screenOptions={{headerShown:false}}>
 
         <Stack.Screen name="GetStarted" component={GetStarted}/>
         
@@ -105,6 +110,16 @@ export default function App() {
         <Stack.Screen name="Custom" component={CustomDrawer}/>
 
         <Stack.Screen name='Settings' component={Root}/>
+
+        <Stack.Screen name="Edit Profile" component={EditProfile}/>
+
+        <Stack.Screen name="Privacy Settings" component={PrivacySettings}/>
+
+        <Stack.Screen name="Delete Account" component={DeleteAccount}/>
+
+        <Stack.Screen name="Contact Us" component={ContactUs}/>
+
+        <Stack.Screen name="About Us" component={AboutUs}/>
 
       </Stack.Navigator>
     

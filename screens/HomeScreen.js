@@ -1,5 +1,5 @@
-import { View, Text, Image, TouchableOpacity, ScrollView, Button, Modal} from 'react-native'
-import React, { useContext, useLayoutEffect, useState } from 'react'
+import { View, Text, Image, TouchableOpacity, ScrollView, Button, Modal, Animated, Easing} from 'react-native'
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { ThemeProvider, useNavigation } from '@react-navigation/native'
 import { AdjustmentsHorizontalIcon, Bars3CenterLeftIcon, EnvelopeIcon, LanguageIcon, LightBulbIcon, MicrophoneIcon, MoonIcon, PhoneArrowUpRightIcon, SunIcon, UserIcon} from 'react-native-heroicons/solid'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -26,15 +26,74 @@ const HomeScreen = () => {
     setVisible(false);
   };
 
+  const translateY = useRef(new Animated.Value(0)).current;
+  const rotateXValue = useRef(new Animated.Value(0)).current;
+  const rotateYValue = useRef(new Animated.Value(0)).current;
+
+  const startAnimation = () => {
+    Animated.loop(
+      Animated.parallel([
+        Animated.sequence([
+          Animated.timing(translateY, {
+            toValue: 4,
+            duration: 1000,
+            easing: Easing.ease,
+            useNativeDriver: false,
+          }),
+          Animated.timing(translateY, {
+            toValue: 0,
+            duration: 1000,
+            easing: Easing.ease,
+            useNativeDriver: false,
+          })
+        ]),
+        // Animated.timing(rotateXValue, {
+        //   toValue: 1,
+        //   duration: 4000,
+        //   easing: Easing.linear,
+        //   useNativeDriver: false,
+        // }),
+        // Animated.timing(rotateYValue, {
+        //   toValue: 1,
+        //   duration: 4000,
+        //   easing: Easing.linear,
+        //   useNativeDriver: false,
+        // })
+      ])
+    ).start();
+  };
+
+  useEffect(() => {
+    startAnimation(); 
+  }, []);
+
+  // const spinX = rotateXValue.interpolate({
+  //   inputRange: [0, 1],
+  //   outputRange: ['0deg', '360deg'],
+  // });
+
+  // const spinY = rotateYValue.interpolate({
+  //   inputRange: [0, 1],
+  //   outputRange: ['0deg', '360deg'],
+  // });
+
   const getThemeIcon = () => {
     if (theme.textColor != "white") {
       return (<>
+      <Animated.View style={{
+            transform: [{ translateY }],
+          }}> 
       <MoonIcon color={theme.textColor} size={90} />
+      </Animated.View>
       <Text style={{color:theme.textColor}} className="text-[15px] pt-3 text-justify">{t("dark-mode")}</Text>
       </>)
     } else{
-      return(<> 
+      return(<>
+      <Animated.View style={{
+           transform: [{ translateY }],
+          }}> 
       <SunIcon color={theme.textColor} size={90} />
+      </Animated.View>
       <Text style={{color:theme.textColor}} className="text-[15px] pt-3 text-justify">{t("light-mode")}</Text>
       </>)
     }
@@ -53,12 +112,14 @@ const HomeScreen = () => {
 
       <Navbar/>
 
+      <ScrollView>
+
       {/* Daf */}    
       <TouchableOpacity  onPress={() => navigation.navigate("Delayed Auditory FeedBack System")}>
     
-      <View className="mb-4">
+      <View className="pb-4">
 
-        <View style={[{backgroundColor:theme.secondaryColor}]} className="h-[200px] justify-center rounded-xl p-3 relative space-y-[-7px]">
+        <View style={[{backgroundColor:theme.secondaryColor}]} className="justify-center rounded-xl p-7 mt-2 relative space-y-[-7px]">
 
           <Image source={require('../assets/HomeIMG.png')} className="w-[190px] h-[190px] absolute right-1 mb-2"/>
           <Text style={[{color:theme.textColor}]} className="font-extrabold text-left relative italic mr-[150px] text-[20px]">{t('use-our')}</Text>
@@ -84,7 +145,7 @@ const HomeScreen = () => {
       <View style={{backgroundColor:theme.lightCard}} className="mx-1 w-[40%] justify-center items-center rounded-lg">
       {getThemeIcon()}
         <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
-          <Text style={{color:theme.link}} className="text-blue-300">{t("click")}</Text>
+          <Text style={{color:theme.link}} className="text-blue-300 text-center mx-2">{t("click")}</Text>
         </TouchableOpacity>
       </View>
       </View>
@@ -184,6 +245,8 @@ const HomeScreen = () => {
         <MicrophoneIcon style={[{color:theme.iconColor}]} size={30} />
       </View>
       </TouchableOpacity> */}
+
+      </ScrollView>
     
    </SafeAreaView>
   )

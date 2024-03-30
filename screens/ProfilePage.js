@@ -28,6 +28,8 @@ const ProfilePage = () => {
 
     <Navbar/>
 
+    <ScrollView>
+
     <View className="flex-2 pb-7 items-center">
         <Text style={[{color:theme.textColor}]} className="text-white font-black text-center tracking-widest">{t("profile")}</Text>
         <UserCircleIcon size={155} style={[{color:theme.cardColor}]}/>
@@ -79,12 +81,12 @@ const ProfilePage = () => {
 
     <View className="mb-11 mx-3">
 
-        <View style={[{backgroundColor:theme.cardColor}]} className="h-[200px] justify-center rounded-xl p-3 relative space-y-[-7px]">
+        <View style={[{backgroundColor:theme.cardColor}]} className=" justify-center rounded-xl p-5 relative space-y-[-7px]">
 
           <Image source={require('../assets/HomeIMG.png')} className="w-[190px] h-[190px] absolute right-1 mb-2"/>
           <Text style={[{color:theme.textColor}]} className="font-extrabold text-left relative italic mr-[150px] text-[20px]">{t('use-our')}</Text>
           <Text style={[{color:theme.textColor}]} className="text-[35px] w-[50%] text-left font-extrabold track">{t('delayed')}</Text>
-          <Text style={[{color:theme.textColor}]} className="text-[20px] font-extrabold text-left">{t('auditory')}</Text>
+          <Text style={[{color:theme.textColor}]} className="text-[20px] w-[50%] font-extrabold text-left">{t('auditory')}</Text>
           <Text style={[{color:theme.textColor}]} className=" text-left text-[25px] font-extrabold">{t('system')}</Text>
         
         </View>
@@ -109,6 +111,9 @@ const ProfilePage = () => {
           </Text>
         </View>
       </TouchableOpacity> */}
+      
+      </ScrollView>
+
 
     </SafeAreaView>
   )
