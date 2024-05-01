@@ -3,6 +3,7 @@ const theme ={
         theme:'light',
         textColor:'black',
         backgroundColor:'white',
+        backgroundColorDaf:'#a7bbc0',
         secondaryColor:'#eeeeee',
         tertiaryColor:"#a7bbc0",
         lightCard:"#d1dde1",

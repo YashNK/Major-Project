@@ -37,20 +37,16 @@ const DelayedAuditoryFeedBack = () => {
 
       <Text style={{color:theme.textColor}} className="text-white uppercase mt-2 font-bold text-center mb-5">{t('delay-full')}</Text>
 
-      <View style={{backgroundColor:theme.tertiaryColor}} className="h-[35%] rounded-lg mx-4"> 
-      <WebView
+      <View className="h-[35%] bg-black rounded-xl overflow-hidden mx-4"> 
+      <WebView style={{backgroundColor:theme.tertiaryColor}}
       source={{ uri: 'https://delayed-auditory-feedback-3ued.onrender.com/' }}
-      style={{ marginTop: 20 }}
-      backgroundColor={'transparent'}
+      backgroundColor={'red'}
       bounces={false}
       javaScriptEnabled={true}
       domStorageEnabled={true}
+      transparent={true}
       />
-      
-
       </View>
-
-      <Text style={{color:theme.textColor}} className="text-center pt-2">{t("wait")}</Text>
 
       </View>
 
@@ -59,16 +55,5 @@ const DelayedAuditoryFeedBack = () => {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  webview: {
-    flex: 1,
-    backgroundColor: 'white',
-    marginTop:50
-  },
-});
 
 export default DelayedAuditoryFeedBack
