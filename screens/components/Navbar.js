@@ -27,8 +27,8 @@ const Navbar = () => {
         <Image style={[{backgroundColor: theme.logoColor}]} source={require('../../assets/AppLogo.png')} className="w-[60px] h-[60px] rounded-full"/>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-          <UserIcon style={[{color:theme.iconColor}]} size={30}/>
+        <TouchableOpacity>
+          <Text className='w-6'></Text>
         </TouchableOpacity>
       
       </View>

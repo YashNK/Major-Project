@@ -44,11 +44,11 @@ function Root(){
           )
         }} />
 
-        <Drawer.Screen name="Profile" component={ProfilePage} options={{
+        {/* <Drawer.Screen name="Profile" component={ProfilePage} options={{
           drawerIcon: ({color}) => (
               <UserIcon size={20} color={color}/>
           )
-        }}/>
+        }}/> */}
 
         <Drawer.Screen name="Delayed Auditory FeedBack System" component={DelayedAuditoryFeedBack} options={{
           drawerIcon: ({color}) => (
@@ -87,7 +87,7 @@ export default function App() {
     <themeContext.Provider value={darkMode === true ? theme.dark : theme.light}>
     <NavigationContainer theme={darkMode === false ?  DefaultTheme : DarkTheme}>
       
-      <Stack.Navigator  initialRouteName='GetStarted' screenOptions={{headerShown:false}}>
+      <Stack.Navigator  initialRouteName='Home' screenOptions={{headerShown:false}}>
 
         <Stack.Screen name="GetStarted" component={GetStarted}/>
         

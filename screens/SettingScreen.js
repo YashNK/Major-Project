@@ -57,13 +57,13 @@ const SettingScreen = () => {
         {/* Profile */}
         <Text style={{color:theme.textColor}} className="mt-5 font-bold pl-1">{t('profile')}:</Text>
         <View style={{backgroundColor:theme.cardColor}} className="p-2 rounded-lg mt-2">
-          <TouchableOpacity onPress={() => navigation.navigate("Edit Profile")}>
+          {/* <TouchableOpacity onPress={() => navigation.navigate("Edit Profile")}>
           <View className="flex-row mt-2 mb-2">
             <PencilSquareIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
             <Text style={[{color:theme.textColor}]} className="">{t('edit-profile')}</Text>
           </View>
           </TouchableOpacity>
- 
+  */}
           <TouchableOpacity onPress={() => navigation.navigate("Privacy Settings")}>
           <View className="flex-row mt-2 mb-2">
             <ShieldExclamationIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
@@ -71,12 +71,12 @@ const SettingScreen = () => {
           </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate("Delete Account")}>
+          {/* <TouchableOpacity onPress={() => navigation.navigate("Delete Account")}>
             <View className="flex-row mt-2 mb-2">
             <TrashIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
               <Text style={{color:theme.textColor}}>{t('delete-account')}</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           
 
         </View>
@@ -113,13 +113,13 @@ const SettingScreen = () => {
         </View>
 
         {/* Login */}
-        <Text style={{color:theme.textColor}} className="mt-5 font-bold pl-1">{t('logout')}:</Text>
+        {/* <Text style={{color:theme.textColor}} className="mt-5 font-bold pl-1">{t('logout')}:</Text>
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
         <View style={{backgroundColor:theme.cardColor}} className="flex-row p-2 pb-4 pt-4 rounded-lg mt-2 mb-2">
           <ArrowLeftStartOnRectangleIcon style={[{color:theme.iconColor, marginRight:10}]} size={20}/>
           <Text style={[{color:theme.textColor}]} className="">{t('logout')}</Text>
         </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <Modal
         animationType='fade'

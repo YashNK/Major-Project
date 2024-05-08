@@ -17,10 +17,11 @@ const CustomDrawer = (props) => {
         <View className="flex-1 ">
             <View className="w-full h-[160]">
                 <View className="h-full w-full ml-2 justify-end">
-                    <UserCircleIcon style={{color:theme.textColor}} size={100} color='white'/>
+                    <Image style={[{backgroundColor: theme.logoColor}]} source={require('../../assets/AppLogo.png')} className="w-[80px] h-[80px] ml-1 rounded-full"/>
                     <View className="px-5 pb-2 space-y-[-7]">
-                        <Text style={{color:theme.textColor}} className="text-white font-bold text-2xl">NAME</Text>
-                        <Text style={{color:theme.textColor}} className="text-gray-300">Username</Text>
+                        <Text style={{color:theme.textColor}} className="text-white font-bold text-2xl">BetterSpeak</Text>
+                        <Text style={{color:theme.textColor}} className="text-gray-300 pt-1">Contact us:</Text>
+                        <Text style={{color:theme.textColor}} className="text-gray-300 pt-1">Betterspeak@gmail.com</Text>
                     </View>
                 </View>
             </View>
